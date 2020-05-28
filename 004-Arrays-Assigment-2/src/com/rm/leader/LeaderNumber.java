@@ -1,5 +1,6 @@
 package com.rm.leader;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class LeaderNumber {
@@ -9,13 +10,25 @@ public class LeaderNumber {
 		for (int i = 0; i < input.length; i++) {
 			System.out.print(input[i]+" ");
 		}
-		List<?> leader=LeaderNumber.getLeaderElement(input);
-		
+		System.out.println();
+		int[] leader=LeaderNumber.getLeaderElement(input);
+		System.out.println(Arrays.toString(leader));
+
 	}
 
-	public static List<?> getLeaderElement(int[] input) {
+	public static int[] getLeaderElement(int[] input) {
 		int len = input.length;
+		int temp=0;
+		int[] arr =new int[100];
 		len=len/2;
-		return null;
+		int count = 0;
+		for (int i = 0; i < input.length; i++) {
+			for (int j = i+1; j < input.length; j++) {
+				if(input[i]==input[j]) {
+					arr[count++]=input[i];
+				}
+			}
+		}
+		return arr;
 	}
 }
