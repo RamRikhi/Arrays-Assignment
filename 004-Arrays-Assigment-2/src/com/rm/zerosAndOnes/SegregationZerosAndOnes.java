@@ -1,4 +1,4 @@
-package com.rm.binary;
+package com.rm.zerosAndOnes;
 
 import java.util.Arrays;
 
@@ -17,21 +17,19 @@ public class SegregationZerosAndOnes {
 	public static int[] segregateZerosAndOnes(int[] input) {
 	
 		int[] temp = new int[input.length];
-		int count=0,size=0,size2=0;
+		int count=0,size=0;
 		//counting the 1s element of a given array
 		for (int i = 0; i < input.length; i++) {
 			if(1==input[i])
 				count++;
 		}
-		//storing the size of 1s
-		size2=count;
 		//here segregating the 0s in left side and 1s right side
 		for (int i = 0; i < input.length; i++) {
 			if(0==input[i]) {
 				temp[size++]=input[i];
 			}
 			if(1==input[i]) {
-				temp[size2++]=input[i];
+				temp[count++]=input[i];
 			}
 		}
 		//here copying the temp array to original array
